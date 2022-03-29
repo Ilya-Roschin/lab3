@@ -6,19 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import static java.lang.System.exit;
 
 public class SignController {
-
-    @FXML
-    private CheckBox adminButton;
 
     @FXML
     private Button exitButton;
@@ -32,15 +29,17 @@ public class SignController {
     @FXML
     private Button signButton;
 
-    @FXML
-    private CheckBox userButton;
-
 
     @FXML
     private void initialize() {
         signButton.setOnAction(actionEvent -> {
             if (isUserFounded()) {
-                changeWindow();
+                UserSign userSign = new UserSign();
+                if (Objects.equals(userSign.getSignUser().getRole(), "Admin")) {
+                    changeWindow("/admin-view.fxml");
+                } else {
+                    changeWindow("/user-menu.fxml");
+                }
             } else {
                 System.out.println("User not founded");
             }
@@ -50,12 +49,12 @@ public class SignController {
         });
     }
 
-    private void changeWindow() {
+    private void changeWindow(String string) {
         var stage = (Stage) signButton.getScene().getWindow();
         stage.close();
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/user-menu.fxml"));
+        loader.setLocation(getClass().getResource(string));
         try {
             loader.load();
         } catch (IOException e) {
@@ -67,13 +66,6 @@ public class SignController {
         stage.show();
     }
 
-    private boolean isRoleSelected() {
-        if (userButton.isSelected() || adminButton.isSelected()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     private boolean isUserFounded() {
         UserSign userSign = new UserSign();

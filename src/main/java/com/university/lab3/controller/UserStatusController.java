@@ -29,6 +29,7 @@ public class UserStatusController {
 
     @FXML
     private void initialize() {
+        //USER_REPOSITORY.autoUpdateUserInfo();
         updateLabelText();
         backButton.setOnAction(actionEvent -> {
             changeWindow("/user-menu.fxml");
@@ -67,12 +68,13 @@ public class UserStatusController {
         }
 
         try {
-            faculty = signUser.getFacultyToEnroll().getName();
+            faculty = signUser.getEnrolledFaculty().getName();
         } catch (NullPointerException e) {
             System.out.println("поле faculty отсутствует");
         }
 
         infoText.setText("Имя: " + signUser.getUserName() + "\n" + "Средний балл" + signUser.getAverageMark() + "\n" +
                 "Поступил: " + faculty + "\n" + "Выбранный факультет: " + facultyToEnroll + "\n");
+
     }
 }

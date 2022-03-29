@@ -1,5 +1,7 @@
 package com.university.lab3.controller;
 
+import com.university.lab3.model.User;
+import com.university.lab3.repository.UserRepository;
 import com.university.lab3.sign.UserSign;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,7 @@ import java.io.IOException;
 public class UserMenuController {
 
         private static final UserSign USER_SIGN = new UserSign();
+        private static final UserRepository USER_REPOSITORY = new UserRepository();
 
         @FXML
         private Button backButton;
@@ -34,11 +37,14 @@ public class UserMenuController {
                         changeWindow("/sign-view.fxml");
                 });
                 enrollButton.setOnAction(actionEvent -> {
+                        USER_REPOSITORY.autoUpdateUserInfo();
                         changeWindow("/user-enroll.fxml");
                 });
                 statusButton.setOnAction(actionEvent -> {
+                        USER_REPOSITORY.autoUpdateUserInfo();
                         changeWindow("/user-status.fxml");
                 });
+
         }
 
         private void changeWindow(String string) {
@@ -62,6 +68,5 @@ public class UserMenuController {
                 UserSign userSign = new UserSign();
                 usernameLabel.setText("User: " + USER_SIGN.getSignUser().getUserName());
         }
-
 
 }

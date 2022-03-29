@@ -1,6 +1,7 @@
 package com.university.lab3.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Faculty implements Serializable {
 
@@ -31,4 +32,19 @@ public class Faculty implements Serializable {
     public void setAverageMark(double averageMark) {
         this.averageMark = averageMark;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Faculty faculty = (Faculty) o;
+        return Double.compare(faculty.averageMark, averageMark) == 0 && Objects.equals(name, faculty.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, averageMark);
+    }
+
+
 }

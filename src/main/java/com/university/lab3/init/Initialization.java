@@ -14,6 +14,7 @@ public class Initialization {
     public void initUsers() {
         USER_REPOSITORY.addUser(new User("User","Van","123"));
         USER_REPOSITORY.addUser(new User("User","Dan","123"));
+        USER_REPOSITORY.addUser(new User("Admin","Boss","123"));
     }
 
     public void initFaculties() {
