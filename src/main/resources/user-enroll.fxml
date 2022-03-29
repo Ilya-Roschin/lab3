@@ -25,8 +25,8 @@
       <Button fx:id="backButton" layoutX="453.0" layoutY="354.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" text="выйти" />
       <TableView fx:id="table" layoutX="14.0" layoutY="73.0" prefHeight="307.0" prefWidth="300.0">
         <columns>
-          <TableColumn fx:id="facultyFileld" prefWidth="149.0" text="факультет" />
-          <TableColumn fx:id="averageMark" prefWidth="150.0" text="средний балл" />
+          <TableColumn fx:id="facultyColumn" prefWidth="149.0" text="факультет" />
+          <TableColumn fx:id="markColumn" prefWidth="150.0" text="средний балл" />
         </columns>
       </TableView>
    </children>

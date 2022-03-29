@@ -3,6 +3,8 @@ package com.university.lab3.sign;
 import com.university.lab3.model.User;
 import com.university.lab3.repository.UserRepository;
 
+import java.util.Objects;
+
 public class UserSign {
 
     private static final UserRepository STUDENT_REPOSITORY = new UserRepository();
@@ -22,7 +24,8 @@ public class UserSign {
     }
 
     private boolean isPassword(String password, User user) {
-        return user.getPassword().equals(password);
+        return Objects.equals(user.getPassword(), password);
+
     }
 
     public User getSignUser() {

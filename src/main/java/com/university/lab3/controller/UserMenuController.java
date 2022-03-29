@@ -42,7 +42,8 @@ public class UserMenuController {
         }
 
         private void changeWindow(String string) {
-                backButton.getScene().getWindow().hide();
+                var stage = (Stage) backButton.getScene().getWindow();
+                stage.close();
 
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource(string));
@@ -53,9 +54,8 @@ public class UserMenuController {
                 }
 
                 Parent root = loader.getRoot();
-                Stage stage = new Stage();
                 stage.setScene(new Scene(root));
-                stage.showAndWait();
+                stage.show();
         }
 
         private void updateUserField() {

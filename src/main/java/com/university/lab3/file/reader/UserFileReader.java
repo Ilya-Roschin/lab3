@@ -1,5 +1,6 @@
-package com.university.lab3.file;
+package com.university.lab3.file.reader;
 
+import com.university.lab3.file.array.Users;
 import com.university.lab3.model.User;
 
 import java.io.*;
@@ -7,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class FileReader {
+public class UserFileReader {
 
-    private static final String PATH = "src/main/java/com/university/lab3/file/users.bat";
+    private static final String PATH = "src/main/java/com/university/lab3/file/data/users.bat";
     private static final File FILE = new File(PATH);
 
     public void clearFile() {
@@ -33,7 +34,7 @@ public class FileReader {
                 objectInputStream.close();
             }
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("IoExceprion");
+         e.printStackTrace();
         }
         return userList;
     }
@@ -56,7 +57,7 @@ public class FileReader {
         }
     }
 
-    public void deleteStudent(User user) {
+    public void deleteUser(User user) {
         List<User> userList = findAll();
         clearFile();
         for (int i = 0; i < userList.size(); i++) {

@@ -1,4 +1,4 @@
-package com.university.lab3.file;
+package com.university.lab3.file.array;
 
 import com.university.lab3.model.User;
 

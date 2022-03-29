@@ -1,6 +1,6 @@
 package com.university.lab3.repository;
 
-import com.university.lab3.file.FileReader;
+import com.university.lab3.file.reader.UserFileReader;
 import com.university.lab3.model.User;
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class UserRepository {
 
-    private static final FileReader FILE_READER = new FileReader();
+    private static final UserFileReader FILE_READER = new UserFileReader();
 
     public void addUser(User user) {
             FILE_READER.addToFile(user);
@@ -29,7 +29,7 @@ public class UserRepository {
 
     public void updateUser(String username, User updatedUser) {
         if (!findByName(username).equals("empty")) {
-            FILE_READER.deleteStudent(findByName(username));
+            FILE_READER.deleteUser(findByName(username));
             FILE_READER.addToFile(updatedUser);
         } else {
             System.out.println("User not founded");

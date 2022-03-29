@@ -10,8 +10,9 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-//        Initialization initialization = new Initialization();
-//        initialization.init();
+        Initialization initialization = new Initialization();
+        //initialization.initUsers();
+        //initialization.initFaculties();
 
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/sign-view.fxml"));
 
