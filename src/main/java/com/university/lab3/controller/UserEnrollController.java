@@ -23,7 +23,6 @@ public class UserEnrollController {
     private static final UserSign USER_SIGN = new UserSign();
     private static final FacultyRepository FACULTY_REPOSITORY = new FacultyRepository();
     private static final UserRepository USER_REPOSITORY = new UserRepository();
-    private static String ChoosenFaculty = "не выбран";
 
     private ObservableList<Faculty> facultiesData = FXCollections.observableArrayList();
     private ObservableList<String> facultyNames = FXCollections.observableArrayList();
@@ -110,14 +109,15 @@ public class UserEnrollController {
     }
 
     private void updateLabelFaculty() {
-        choosenFacultyLabel.setText("выбран" + findChoosenFacultyName());
+        choosenFacultyLabel.setText("выбран " + findChoosenFacultyName());
     }
 
     private void updateUserChoosenFaculty() {
-        if (Objects.equals(findChoosenFacultyName(),null)) {
+
+        if (!Objects.equals(findChoosenFacultyName(),null)) {
             String username = USER_SIGN.getSignUser().getUserName();
             User user = USER_REPOSITORY.findByName(username);
-            user.setFacultyToEnroll(FACULTY_REPOSITORY.findByName(username));
+            user.setFacultyToEnroll(FACULTY_REPOSITORY.findByName(findChoosenFacultyName()));
             USER_REPOSITORY.updateUser(username, user);
         }
     }

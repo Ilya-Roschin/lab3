@@ -30,7 +30,7 @@ public class UserRepository {
     public void updateUser(String username, User updatedUser) {
         if (!findByName(username).equals("empty")) {
             FILE_READER.deleteUser(findByName(username));
-            FILE_READER.addToFile(updatedUser);
+            //FILE_READER.addToFile(updatedUser);
         } else {
             System.out.println("User not founded");
         }
