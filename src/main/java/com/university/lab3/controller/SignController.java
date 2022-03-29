@@ -1,5 +1,6 @@
 package com.university.lab3.controller;
 
+import com.university.lab3.sign.UserSign;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static java.lang.System.exit;
 
 public class SignController {
 
@@ -32,25 +35,56 @@ public class SignController {
     @FXML
     private CheckBox userButton;
 
+
     @FXML
-    void initialize() {
+    private void initialize() {
         signButton.setOnAction(actionEvent -> {
-
-            signButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/user-menu.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                System.out.println("не робит");
+            if (isUserFounded()) {
+                changeWindow();
+            } else {
+                System.out.println("User not founded");
             }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+        });
+        exitButton.setOnAction(actionEvent -> {
+            exit(0);
         });
     }
+
+    private void changeWindow() {
+        var stage = (Stage) signButton.getScene().getWindow();
+        stage.close();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/user-menu.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            System.out.println("ошибка смены сцены");
+        }
+
+        Parent root = loader.getRoot();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    private boolean isRoleSelected() {
+        if (userButton.isSelected() || adminButton.isSelected()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean isUserFounded() {
+        UserSign userSign = new UserSign();
+        if (loginField.getText().length() >= 3 && passwordField.getText().length() >= 3) {
+            return userSign.sign(loginField.getText().replaceAll("\\s+", ""),
+                    passwordField.getText().replaceAll("\\s+", ""));
+        } else {
+            return false;
+        }
+    }
+
+
 }
 
