@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.lab3.controller.UserEnrollController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.lab3.controller.UserEnrollController">
    <children>
       <Label fx:id="usernameLabel" alignment="CENTER" contentDisplay="TOP" layoutX="22.0" layoutY="14.0" prefHeight="54.0" prefWidth="322.0" text="User: ">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="chooseButton" layoutX="387.0" layoutY="131.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" text="выбрать" />
-      <ChoiceBox fx:id="chooseFacultyBox" layoutX="331.0" layoutY="75.0" prefHeight="25.0" prefWidth="255.0" />
+      <Button fx:id="chooseButton" layoutX="387.0" layoutY="131.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #666666;" text="выбрать" textFill="WHITE" />
+      <ChoiceBox fx:id="chooseFacultyBox" layoutX="331.0" layoutY="75.0" prefHeight="25.0" prefWidth="255.0" style="-fx-background-color: #666666;" />
       <Label fx:id="choosenFacultyLabel" alignment="CENTER" contentDisplay="TOP" layoutX="289.0" layoutY="21.0" prefHeight="54.0" prefWidth="322.0" text="Faculty to choose">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="453.0" layoutY="354.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" text="выйти" />
+      <Button fx:id="backButton" layoutX="453.0" layoutY="354.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #666666;" text="выйти" textFill="WHITE" />
       <TableView fx:id="table" layoutX="14.0" layoutY="73.0" prefHeight="307.0" prefWidth="300.0">
         <columns>
           <TableColumn fx:id="facultyColumn" prefWidth="149.0" text="факультет" />

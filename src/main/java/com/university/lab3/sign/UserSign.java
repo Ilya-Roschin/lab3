@@ -15,7 +15,6 @@ public class UserSign {
 
         if (isPassword(password, foundedUser)) {
             signUser = foundedUser;
-            System.out.println(signUser.getUserName());
             return true;
         } else {
             System.out.println("User not found enter");

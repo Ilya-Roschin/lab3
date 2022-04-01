@@ -1,6 +1,5 @@
 package com.university.lab3.controller;
 
-import com.university.lab3.model.Faculty;
 import com.university.lab3.model.User;
 import com.university.lab3.repository.UserRepository;
 import javafx.collections.FXCollections;
@@ -9,12 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -49,9 +43,6 @@ public class AdminController {
 
     @FXML
     private TableView<User> table;
-
-    @FXML
-    private Label usernameLabel;
 
     @FXML
     private void initialize() {
@@ -111,6 +102,7 @@ public class AdminController {
             USER_REPOSITORY.updateUser(username, user);
             updateTable();
         } catch (Exception e) {
+            System.out.println("Ошибка выставления оценки");
         }
 
     }

@@ -9,22 +9,22 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.lab3.controller.AdminController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.lab3.controller.AdminController">
    <children>
       <Label fx:id="usernameLabel" alignment="CENTER" contentDisplay="TOP" layoutX="139.0" layoutY="14.0" prefHeight="54.0" prefWidth="322.0" text="Admin: ">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="443.0" layoutY="344.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" text="выйти" />
+      <Button fx:id="backButton" layoutX="443.0" layoutY="344.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #666666;" text="выйти" textFill="WHITE" />
       <TableView fx:id="table" layoutX="48.0" layoutY="68.0" prefHeight="314.0" prefWidth="302.0">
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="151.0" text="имя" />
           <TableColumn fx:id="markColumn" prefWidth="150.0" text="оценка" />
         </columns>
       </TableView>
-      <Button fx:id="setMark" layoutX="391.0" layoutY="148.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" text="выставить оценку" />
-      <ChoiceBox fx:id="choiseUser" layoutX="386.0" layoutY="68.0" prefWidth="150.0" />
-      <TextField fx:id="choiseMark" layoutX="431.0" layoutY="106.0" prefHeight="25.0" prefWidth="62.0" promptText="оценка" />
+      <Button fx:id="setMark" layoutX="391.0" layoutY="148.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #666666;" text="выставить оценку" textFill="WHITE" />
+      <ChoiceBox fx:id="choiseUser" layoutX="386.0" layoutY="68.0" prefWidth="150.0" style="-fx-background-color: #666666;" />
+      <TextField fx:id="choiseMark" layoutX="431.0" layoutY="106.0" prefHeight="25.0" prefWidth="62.0" promptText="оценка" style="-fx-background-color: #666666;" />
    </children>
 </Pane>

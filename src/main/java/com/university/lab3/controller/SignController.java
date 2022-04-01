@@ -29,7 +29,6 @@ public class SignController {
     @FXML
     private Button signButton;
 
-
     @FXML
     private void initialize() {
         signButton.setOnAction(actionEvent -> {

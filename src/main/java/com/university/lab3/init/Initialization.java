@@ -13,14 +13,21 @@ public class Initialization {
 
     public void initUsers() {
         USER_REPOSITORY.addUser(new User("User","Van","123"));
-        USER_REPOSITORY.addUser(new User("User","Dan","123"));
-        USER_REPOSITORY.addUser(new User("Admin","Boss","123"));
+        USER_REPOSITORY.addUser(new User("User","Gayorgiy","123"));
+        USER_REPOSITORY.addUser(new User("Admin","Admin","123"));
+        USER_REPOSITORY.addUser(new User("User","Alex","123"));
+        USER_REPOSITORY.addUser(new User("User","Vladislave","123"));
+        USER_REPOSITORY.addUser(new User("User","Vlad","123"));
     }
 
     public void initFaculties() {
-        FACULTY_REPOSITORY.addFaculty(new Faculty("Dungeon", 6d));
-        FACULTY_REPOSITORY.addFaculty(new Faculty("Говна и палок", 3d));
+        FACULTY_REPOSITORY.addFaculty(new Faculty("Фкп", 6d));
+        FACULTY_REPOSITORY.addFaculty(new Faculty("Радиоэлектроники", 3d));
         FACULTY_REPOSITORY.addFaculty(new Faculty("ЯУЗБЕК", 1d));
-        FACULTY_REPOSITORY.addFaculty(new Faculty("Gym", 9d));
+        FACULTY_REPOSITORY.addFaculty(new Faculty("ЯУЗБЕК2", 1d));
+        FACULTY_REPOSITORY.addFaculty(new Faculty("ЯУЗБЕК3", 1d));
+        FACULTY_REPOSITORY.addFaculty(new Faculty("ЯУЗБЕК4", 1d));
+        FACULTY_REPOSITORY.addFaculty(new Faculty("ЯУЗБЕК5", 1d));
+        FACULTY_REPOSITORY.addFaculty(new Faculty("Ксис", 9d));
     }
 }

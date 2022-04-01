@@ -41,11 +41,16 @@ public class UserRepository {
     }
 
     public void autoUpdateUserInfo() {
-        User user = findByName((new UserSign()).getSignUser().getUserName());
-        if (user.getAverageMark() >= user.getFacultyToEnroll().getAverageMark()) {
-            user.setEnrolledFaculty(user.getFacultyToEnroll());
+        try {
+            User user = findByName((new UserSign()).getSignUser().getUserName());
+            if (user.getAverageMark() >= user.getFacultyToEnroll().getAverageMark()) {
+                user.setEnrolledFaculty(user.getFacultyToEnroll());
+            }
+            updateUser(user.getUserName(), user);
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка обновления");
         }
-        updateUser(user.getUserName(), user);
+
     }
 
 }

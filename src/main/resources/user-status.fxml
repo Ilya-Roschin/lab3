@@ -5,15 +5,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.lab3.controller.UserStatusController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.lab3.controller.UserStatusController">
    <children>
-      <Button fx:id="backButton" layoutX="443.0" layoutY="344.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" text="назад" />
+      <Button fx:id="backButton" layoutX="443.0" layoutY="344.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #666666;" text="назад" textFill="WHITE" />
       <Label fx:id="usernameLable" alignment="CENTER" contentDisplay="CENTER" layoutX="207.0" layoutY="41.0" prefHeight="17.0" prefWidth="186.0" text="user:">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="infoText" alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="90.0" prefHeight="192.0" prefWidth="393.0" text="info">
+      <Label fx:id="infoText" alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="90.0" prefHeight="192.0" prefWidth="393.0" text="info" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
